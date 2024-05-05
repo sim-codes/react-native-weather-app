@@ -6,97 +6,58 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import Demo from './components/Demo';
+import Header from './components/Header';
+import Main from './components/Main';
+import Footer from './components/Footer';
+// import type {PropsWithChildren} from 'react';
+import {SafeAreaView, ScrollView, StyleSheet, ImageBackground, Text,} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+// type SectionProps = PropsWithChildren<{
+//   title: string;
+// }>;
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const image = {uri: 'https://i.ibb.co/jVZ6Md7/8569d55cc9411ef26b6cd1e9ab17efce.jpg'};
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+const images = [
+  'https://i.ibb.co/f0HqSgd/287e0704eceb5caaa3834a834c281314.jpg',
+  'https://i.ibb.co/jVZ6Md7/8569d55cc9411ef26b6cd1e9ab17efce.jpg',
+  'https://i.ibb.co/3hwwjz9/896c9e231e60401a6225d9440a1e9ee5.jpg',
+]
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
+      source={image}
+      resizeMode='cover'
+      blurRadius={5}
+      style={styles.image}>
         <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
+        <Main />
+        {/* <APIView /> */}
+        <Footer />
+      </ImageBackground>
     </SafeAreaView>
+    // <SafeAreaView>
+    //   <ScrollView style={styles.sectionContainer}
+    //   contentInsetAdjustmentBehavior="automatic">
+    //     <BackgroungImage />
+    //   </ScrollView>
+    // </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  image: {
+    flex: 1,
+    padding: 24,
+    // justifyContent: 'center',
+    // alignContent: 'center'
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
