@@ -1,21 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import Demo from './components/Demo';
-import Header from './components/Header';
-import Main from './components/Main';
-import Footer from './components/Footer';
-// import type {PropsWithChildren} from 'react';
+import Demo from './ui/Demo';
+import Header from './ui/Header';
+import Main from './ui/Main';
+import Footer from './ui/Footer';
 import {SafeAreaView, ScrollView, StyleSheet, ImageBackground, Text,} from 'react-native';
-
-// type SectionProps = PropsWithChildren<{
-//   title: string;
-// }>;
 
 const image = {uri: 'https://i.ibb.co/jVZ6Md7/8569d55cc9411ef26b6cd1e9ab17efce.jpg'};
 
@@ -35,16 +23,9 @@ function App(): React.JSX.Element {
       style={styles.image}>
         <Header />
         <Main />
-        {/* <APIView /> */}
         <Footer />
       </ImageBackground>
     </SafeAreaView>
-    // <SafeAreaView>
-    //   <ScrollView style={styles.sectionContainer}
-    //   contentInsetAdjustmentBehavior="automatic">
-    //     <BackgroungImage />
-    //   </ScrollView>
-    // </SafeAreaView>
   );
 }
 
@@ -55,8 +36,6 @@ const styles = StyleSheet.create({
   image: {
     flex: 1,
     padding: 24,
-    // justifyContent: 'center',
-    // alignContent: 'center'
   },
   sectionContainer: {
     marginTop: 32,

@@ -1,7 +1,5 @@
 import React from 'react';
-import {Text, View, Image,
-FlatList, StyleSheet} 
-from 'react-native';
+import {Text, View, Image, StyleSheet} from 'react-native';
 import APIView from './APIView';
 
 

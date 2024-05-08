@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {Text, View, StyleSheet} from 'react-native';
-import { APIData } from '../lib/definitions';
 import {getWeather} from '../lib/data';
 
 // Dummy data
